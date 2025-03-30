@@ -90,6 +90,11 @@ configure(subprojects.filter { server in it.name || "utils" in it.name }) {
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
         testImplementation("org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion")
         testRuntimeOnly("org.junit.platform:junit-platform-console:1.9.0")
+        implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-json'
+
     }
 }
 
