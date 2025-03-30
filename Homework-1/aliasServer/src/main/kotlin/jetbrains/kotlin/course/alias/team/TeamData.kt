@@ -14,7 +14,7 @@ class TeamService(private val identifierFactory: IdentifierFactory) {
         
         repeat(teamsNumber) {
             val id = identifierFactory.createIdentifier()
-            val team = Team(id, "Team #$id")
+            val team = Team(id)
             teamsStorage[id] = team
             teams.add(team)
         }
@@ -22,3 +22,5 @@ class TeamService(private val identifierFactory: IdentifierFactory) {
         return teams
     }
 }
+
+data class TeamData(val id: Identifier, val points: Int = 0, val name: String = "Team#${id + 1}")
